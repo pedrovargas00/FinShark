@@ -9,9 +9,9 @@ const Table = ({config, data}: Props) => {
     const renderedHeader = config.map((config: any) => {
 
         return (
-            <th key={config.label} className="p-4 text-left text-xs font-medium text-gray-500 upppercase tracking-wider">
-                {config.label}
-            </th>
+            <tr key={config.label} className="p-4 text-left text-xs font-medium text-gray-500 upppercase tracking-wider">
+                <th className="p-3">{config.label}</th>
+            </tr>
         );
     });
 
@@ -28,8 +28,10 @@ const Table = ({config, data}: Props) => {
 
     return (
         <div className="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8">
-            <thead className="min-w-full divide-y divide-gray-200 m-5">{renderedHeader}</thead>
-            <tbody>{renderedRow}</tbody>
+            <table className="min-w-full divide-y divide-gray-200 m-5">
+                <thead className="bg-gray-50">{renderedHeader}</thead>
+                <tbody>{renderedRow}</tbody>
+            </table>
         </div>
     );
     
